@@ -1,13 +1,14 @@
 import PlusBtn from "./PlusBtn";
+import { useDispatch } from "react-redux";
 
-const Buttons = ({ handleChangeState, counterProps }) => {
+const Buttons = () => {
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <PlusBtn
-        handleChangeState={handleChangeState}
-        counterProps={counterProps}
-      />
-      <button onClick={() => handleChangeState(counterProps - 1)}>-</button>
+      <PlusBtn />
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+      <button onClick={() => dispatch({ type: "RESET" })}>CE</button>
     </div>
   );
 };

@@ -1,5 +1,9 @@
-const PlusBtn = ({ handleChangeState, counterProps }) => {
-  return <button onClick={() => handleChangeState(counterProps + 1)}>+</button>;
+import { useDispatch } from "react-redux";
+
+const PlusBtn = () => {
+  const dispatch = useDispatch();
+
+  return <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>;
 };
 
 export default PlusBtn;
